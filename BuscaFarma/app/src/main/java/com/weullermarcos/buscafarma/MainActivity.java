@@ -2,6 +2,7 @@ package com.weullermarcos.buscafarma;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         edtRemedy = (EditText) findViewById(R.id.edtRemedy);
         lstPharmacy = (ListView) findViewById(R.id.lstPharmacy);
-
     }
+
+
 }
