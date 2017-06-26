@@ -7,21 +7,29 @@
     android:orientation="vertical"
     tools:context="com.weullermarcos.buscafarma.MainActivity">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:src="@mipmap/busca_farma_cabecalho" />
-
     <LinearLayout
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="8">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="testes"/>
+            android:layout_marginTop="10dp"
+            android:text="@string/txt_find_remedy"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ListView>
 
 
     </LinearLayout>
