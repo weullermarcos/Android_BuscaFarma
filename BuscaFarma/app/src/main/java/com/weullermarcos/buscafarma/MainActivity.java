@@ -10,7 +10,7 @@ import android.widget.ListView;
 public class MainActivity extends AppCompatActivity {
 
     EditText edtRemedy;
-    ListView lstPharmacy;
+    RecyclerView lstPharmacy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         edtRemedy = (EditText) findViewById(R.id.edtRemedy);
-        lstPharmacy = (ListView) findViewById(R.id.lstPharmacy);
+        lstPharmacy = (RecyclerView) findViewById(R.id.lstPharmacy);
     }
 
 
