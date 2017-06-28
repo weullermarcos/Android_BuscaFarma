@@ -8,27 +8,71 @@
     tools:context="com.weullermarcos.buscafarma.MainActivity">
 
     <LinearLayout
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/corContainerBusca">
 
-        <TextView
+        <Button
+            android:id="@+id/bt_mostrar_busca"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/txt_find_remedy"
-            android:textStyle="bold" />
+            android:text="@string/txt_mostrar_busca"
+            android:textAlignment="center"
+            android:textSize="10dp"
+            android:background="@color/corContainerBusca"/>
 
-        <EditText
-            android:id="@+id/edtRemedy"
+        <LinearLayout
+            android:id="@+id/ll_busca_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/corContainerBusca">
+
+            <EditText
+            android:id="@+id/et_nome_remedio"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="@string/txt_buscar_remedio"/>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/lstPharmacy"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_preco_maximo"
+                    android:layout_marginTop="11dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/txt_preco"/>
+
+                <EditText
+                    android:id="@+id/et_quantidade_itens"
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/txt_quantidade"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bt_buscar_remedio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Buscar"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/corTemaAplicativo"/>
+        </LinearLayout>
     </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_lista_farmacia"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"/>
 </LinearLayout>

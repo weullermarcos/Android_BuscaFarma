@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Busca-Farma</string>
-    <string name="txt_find_remedy">Digite o remédio a ser buscado:</string>
+    <string name="txt_buscar_remedio">Digite o remédio a ser buscado</string>
+    <string name="txt_quantidade">Digite a quantidade de itens da pesquisa</string>
+    <string name="txt_preco">Digite o preço</string>
+    <string name="txt_mostrar_busca">Clique aqui para mostrar ou ocultar os campos de busca</string>
+    <string name="alert_loading">Carregando...</string>
+    <string name="alert_doing_request">Aguarde alguns instantes!</string>
+    <string name="url_base">http://mobile-aceite.tcu.gov.br/</string>
 </resources>
