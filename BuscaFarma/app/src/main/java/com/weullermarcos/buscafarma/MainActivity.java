@@ -2,6 +2,7 @@ package com.weullermarcos.buscafarma;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -157,15 +158,24 @@ public class MainActivity extends BaseActivity implements IRemedioCallback {
             if(position >= mSource.size())
                 return;
 
-            RemedioDomain data = mSource.get(position);
+            final RemedioDomain data = mSource.get(position);
 
             Random r = new Random();
-            int distancia = r.nextInt(80 - 65) + 30;
+            final int distancia = r.nextInt(80 - 65) + 30;
 
             holder.mNomeRemedio.setText(data.getProduto());
             holder.mPrecoRemedio.setText(String.valueOf(data.getPf0()));
             holder.mNomeFarmacia.setText(data.getLaboratorio());
             holder.mDistanciaFarmacia.setText(distancia + " Km");
+            holder.mRootContainer.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, DetailActivity.class);
+                    intent.putExtra("data", data);
+                    intent.putExtra("distancia", distancia);
+                    startActivity(intent);
+                }
+            });
         }
 
         @Override
@@ -179,6 +189,7 @@ public class MainActivity extends BaseActivity implements IRemedioCallback {
             public TextView mPrecoRemedio;
             public TextView mNomeFarmacia;
             public TextView mDistanciaFarmacia;
+            public LinearLayout mRootContainer;
 
             public RemedioItemHolder(View view) {
                 super(view);
@@ -187,6 +198,7 @@ public class MainActivity extends BaseActivity implements IRemedioCallback {
                 mNomeRemedio = (TextView) view.findViewById(R.id.tv_nome_remedio);
                 mPrecoRemedio = (TextView) view.findViewById(R.id.tv_preco_remedio);
                 mDistanciaFarmacia = (TextView) view.findViewById(R.id.tv_distancia_farmacia);
+                mRootContainer = (LinearLayout) view.findViewById(R.id.ll_root_container);
             }
         }
     }
